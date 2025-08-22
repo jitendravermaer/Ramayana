@@ -84,11 +84,11 @@ Ramayana/
 
 ---
 
-## 📸 Screenshots
+## 📸
 
-| Homepage                        | Characters                                  | Stories                               |
-| ------------------------------- | ------------------------------------------- | ------------------------------------- |
-| ![Home](./screenshots/home.png) | ![Characters](./screenshots/characters.png) | ![Stories](./screenshots/stories.png) |
+|                                 |                                                                                     |
+| ------------------------------- | ----------------------------------------------------------------------------------- |
+| ![Home](image/fevicon.png)      |                          ![Home](image/rama-avatar.jpg)                             |
 
 ---
 
