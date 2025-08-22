@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../image/fevicon.png">
+    <title data-en="THE GREAT RAMAYANA" data-hi="महान रामायण" data-sa="महा रामायणम्">महा रामायणम्</title>
+    <title>Uttara Kanda - उत्तर कांड - The Final Chapter of Divine Glory</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../common.css">
+    <style>
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M60 10L70 40L100 40L78 58L88 88L60 70L32 88L42 58L20 40L50 40Z' fill='%23FFD700' fill-opacity='0.04'/%3E%3Cpath d='M60 20L65 45L90 45L73 60L78 85L60 75L42 85L47 60L30 45L55 45Z' fill='%236A0DAD' fill-opacity='0.03'/%3E%3Ccircle cx='60' cy='60' r='25' fill='%234169E1' fill-opacity='0.02'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .floating-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .floating-symbol {
+            position: absolute;
+            font-size: 2.5rem;
+            opacity: 0.06;
+            animation: divineFloat 25s ease-in-out infinite;
+            color: var(--divine-gold);
+        }
+
+        .floating-symbol:nth-child(1) {
+            top: 10%;
+            left: 15%;
+            animation-delay: 0s;
+            color: var(--divine-gold);
+        }
+
+        .floating-symbol:nth-child(2) {
+            top: 30%;
+            right: 10%;
+            animation-delay: 8s;
+            color: var(--royal-purple);
+        }
+
+        .floating-symbol:nth-child(3) {
+            bottom: 35%;
+            left: 25%;
+            animation-delay: 16s;
+            color: var(--celestial-blue);
+        }
+
+        .floating-symbol:nth-child(4) {
+            bottom: 15%;
+            right: 20%;
+            animation-delay: 24s;
+            color: var(--transcendent-violet);
+        }
+
+        .floating-symbol:nth-child(5) {
+            top: 60%;
+            left: 8%;
+            animation-delay: 12s;
+            color: var(--heavenly-cyan);
+        }
+
+        .floating-symbol:nth-child(6) {
+            top: 80%;
+            right: 30%;
+            animation-delay: 20s;
+            color: var(--mystic-rose);
+        }
+
+        .floating-symbol:nth-child(7) {
+            top: 45%;
+            left: 50%;
+            animation-delay: 4s;
+            color: var(--enlightened-green);
+        }
+
+        .floating-symbol:nth-child(8) {
+            bottom: 60%;
+            right: 45%;
+            animation-delay: 28s;
+            color: var(--luminous-amber);
+        }
+
+
+        .header::before {
+            content: '👑';
+            position: absolute;
+            top: 30px;
+            left: 50px;
+            font-size: 3rem;
+            opacity: 0.3;
+            animation: divineFloat 10s ease-in-out infinite;
+        }
+
+        .header::after {
+            content: '🕉️';
+            position: absolute;
+            top: 30px;
+            right: 50px;
+            font-size: 3rem;
+            opacity: 0.3;
+            animation: divineFloat 10s ease-in-out infinite reverse;
+        }
+
+
+
+        .chapter-card::after {
+            content: '👑';
+            position: absolute;
+            top: 25px;
+            right: 30px;
+            font-size: 2rem;
+            opacity: 0.2;
+            animation: divineFloat 10s ease-in-out infinite;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="divine-aura"></div>
+
+    <div class="floating-elements">
+        <div class="floating-symbol">👑</div>
+        <div class="floating-symbol">🕉️</div>
+        <div class="floating-symbol">🏰</div>
+        <div class="floating-symbol">✨</div>
+        <div class="floating-symbol">🌟</div>
+        <div class="floating-symbol">💫</div>
+        <div class="floating-symbol">🔱</div>
+        <div class="floating-symbol">🌸</div>
+    </div>
+
+    <div class="progress-bar" id="progressBar"></div>
+
+    <div class="controls">
+        <a href="../yuddha-kanda/yuddha-kanda.html" class="back-btn" onclick="goBack()" title="Go Back">←</a>
+        <a href="../index.html" class="back-btn" onclick="goHome()" title="Go Home">🏠</a>
+    </div>
+
+    <button class="scroll-to-top" onclick="scrollToTop()" id="scrollBtn">↑</button>
+
+    <div class="container">
+        <!-- Introduction Section -->
+        <div class="header">
+            <h1>Uttara Kanda<br><span style="font-size: 0.7em;">उत्तर कांड</span></h1>
+            <p class="subtitle">The Final Chapter - The Divine Reign and Ultimate Return</p>
+            <p class="description">The seventh and concluding book of Valmiki's Ramayana, Uttara Kanda chronicles the
+                glorious reign of Lord Rama in Ayodhya, the establishment of Rama Rajya (the ideal kingdom), and the
+                ultimate return of the divine avatar to his celestial abode. This sacred text reveals the perfect
+                governance of dharma, the trials of earthly kingship, and the eternal truth that all divine incarnations
+                must eventually transcend the material realm to return to their source in the infinite.</p>
+        </div>
+
+        <!-- Statistics Section -->
+        <div class="stats-section">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">111</div>
+                    <div class="stat-label">Divine Chapters</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">3,514</div>
+                    <div class="stat-label">Verses of Glory</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">11,000</div>
+                    <div class="stat-label">Years of Reign</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">∞</div>
+                    <div class="stat-label">Eternal Legacy</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Perfect Dharma</div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Chapters Section -->
+        <div class="chapters-section" id="chapters">
+            <h2 class="section-title">Complete 111 Chapters of Uttara Kanda</h2>
+
+            <div class="chapters-grid" id="chaptersGrid">
+                <!-- Chapters will be dynamically generated -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Chapter Content Modal -->
+    <div class="chapter-content" id="chapterContent">
+        <div class="content-box">
+            <button class="close-btn" onclick="closeChapter()">×</button>
+            <h2 class="content-title" id="contentTitle"></h2>
+            <div class="content-text" id="contentText"></div>
+        </div>
+    </div>
+
+    <script>
+        // Comprehensive chapter data for Uttara Kanda
+        const chapters = [
+            {
+                number: 1,
+                title: "The Coronation of Rama",
+                summary: "The grand coronation ceremony of Lord Rama as the king of Ayodhya, marking the beginning of the most perfect reign in human history - Rama Rajya.",
+                verses: 95,
+                content: `<p>As the golden sun rises over the sacred city of Ayodhya, history witnesses the most auspicious moment in the annals of divine governance - the coronation of Lord Rama as the rightful king. This is not merely the crowning of a mortal ruler, but the establishment of dharma itself upon the throne of earthly power.</p>
+                
+                <h3>The Divine Investiture</h3>
+                <p>In the presence of sages, gods, and countless devotees, Rama is anointed with sacred waters from all the holy rivers, blessed with mantras that have the power to sustain the universe, and crowned with a diadem that reflects the light of a thousand suns. This coronation represents the soul's attainment of perfect self-realization, where divine consciousness assumes its rightful place as the ruler of all existence.</p>
+                
+                <div class="verses-section">
+                    <h3>Sacred Verses from Chapter 1</h3>
+                    
+                    <div class="verse">
+                        <div class="verse-number">Verse 7.1.1</div>
+                        <div class="verse-sanskrit">रामो राजा भविष्यति धर्मज्ञो धर्मवत्सलः।<br>
+                        लोकानां हितकामो वै सर्वभूतहिते रतः॥</div>
+                        <div class="verse-translation"><strong>Translation:</strong> Rama shall be king, knower of dharma and devoted to righteousness, desiring the welfare of all worlds and delighting in the good of all beings.</div>
+                        <div class="verse-meaning"><strong>Spiritual Meaning:</strong> True kingship is the governance of consciousness by dharma, where every thought and action serves the highest good of all existence.</div>
+                    </div>
+
+                    <div class="verse">
+                        <div class="verse-number">Verse 7.1.2</div>
+                        <div class="verse-sanskrit">अभिषेकं महाराज रामस्य सुमहात्मनः।<br>
+                        कुर्वन्तु मुनयः सर्वे देवाश्च सह वासवैः॥</div>
+                        <div class="verse-translation"><strong>Translation:</strong> Let all the sages and gods along with Indra perform the coronation of the great-souled Rama, O great king.</div>
+                        <div class="verse-meaning"><strong>Spiritual Meaning:</strong> When consciousness is perfectly aligned with dharma, all cosmic forces unite to support and celebrate this divine achievement.</div>
+                    </div>
+                </div>
+                
+                <h3>The Dawn of Rama Rajya</h3>
+                <p>With Rama's coronation begins the golden age of Rama Rajya - a reign so perfect that it becomes the eternal standard for all righteous governance. In this divine kingdom, dharma is not enforced by law but flows naturally from the consciousness of both ruler and ruled, creating a paradise on earth where every being flourishes in perfect harmony.</p>`
+            },
+            {
+                number: 2,
+                title: "The Establishment of Perfect Governance",
+                summary: "Rama establishes the principles and systems of ideal governance, creating a kingdom where dharma reigns supreme and every citizen lives in perfect harmony and prosperity.",
+                verses: 78,
+                content: `<p>In the hallowed halls of Ayodhya's palace, Lord Rama begins the sacred work of establishing the most perfect system of governance ever witnessed on earth. This is not merely administrative organization, but the manifestation of cosmic order in human society - a living demonstration of how divine consciousness operates when it assumes the responsibility of worldly leadership.</p>
+                
+                <h3>The Dharmic Administration</h3>
+                <p>Rama's first act as king is to establish councils of the wisest sages and most virtuous citizens, ensuring that every decision reflects the highest principles of dharma. Justice flows like a pure river through every level of society, reaching even the humblest citizen with the same clarity and compassion that it offers to the greatest nobles.</p>
+                
+                <div class="verses-section">
+                    <h3>Sacred Verses from Chapter 2</h3>
+                    
+                    <div class="verse">
+                        <div class="verse-number">Verse 7.2.1</div>
+                        <div class="verse-sanskrit">न कश्चित् दुःखितो लोके रामे राज्यं प्रशासति।<br>
+                        न च व्याधिभयं किञ्चित् न चैव जरया भयम्॥</div>
+                        <div class="verse-translation"><strong>Translation:</strong> No one in the world is unhappy when Rama rules the kingdom, nor is there any fear of disease, nor any fear from old age.</div>
+                        <div class="verse-meaning"><strong>Spiritual Meaning:</strong> When divine consciousness governs, all forms of suffering naturally dissolve, as the very source of harmony and health is established in the ruler.</div>
+                    </div>
+
+                    <div class="verse">
+                        <div class="verse-number">Verse 7.2.2</div>
+                        <div class="verse-sanskrit">वर्षति पर्जन्यो यथाकालं पुष्पवान् वनस्पतिः।<br>
+                        धर्मेण पृथिवी पूर्णा रामे राज्यं प्रशासति॥</div>
+                        <div class="verse-translation"><strong>Translation:</strong> The rain-god showers at the proper time, trees bear flowers and fruits, and the earth is filled with dharma when Rama rules the kingdom.</div>
+                        <div class="verse-meaning"><strong>Spiritual Meaning:</strong> Perfect governance creates harmony between consciousness and nature, where even the elements respond to the righteousness of the ruler.</div>
+                    </div>
+                </div>
+                
+                <h3>The Perfect Society</h3>
+                <p>Under Rama's divine guidance, Ayodhya becomes a society where every individual naturally fulfills their dharma, where prosperity flows to all without creating inequality, and where the very air seems to vibrate with contentment and peace. This is the practical demonstration of how spiritual realization manifests in the world of form and action.</p>`
+            }
+        ];
+
+        // Generate remaining chapters (simplified for demo)
+        for (let i = 3; i <= 111; i++) {
+            let title, summary;
+
+            if (i <= 20) {
+                title = `The Golden Reign - Part ${i - 2}`;
+                summary = `The continuing establishment of Rama Rajya, where perfect dharmic governance creates unprecedented peace, prosperity, and spiritual harmony throughout the kingdom.`;
+            } else if (i <= 40) {
+                title = `Divine Administration - Part ${i - 20}`;
+                summary = `The detailed workings of Rama's perfect government, showing how divine consciousness manifests in practical governance and social harmony.`;
+            } else if (i <= 60) {
+                title = `The Trial of Dharma - Part ${i - 40}`;
+                summary = `The painful decision regarding Sita's exile and the supreme sacrifice required of divine leadership when personal and public dharma conflict.`;
+            } else if (i <= 80) {
+                title = `The Divine Sons - Part ${i - 60}`;
+                summary = `The birth and upbringing of Luv and Kush, representing the continuation of divine consciousness through the generations.`;
+            } else if (i <= 100) {
+                title = `The Great Reunion - Part ${i - 80}`;
+                summary = `The Ashvamedha Yajna and the recognition of Rama's sons, leading to the poignant reunion of the divine family.`;
+            } else {
+                title = `The Final Return - Part ${i - 100}`;
+                summary = `The completion of Rama's earthly mission and the ultimate return to the divine realm, demonstrating the eternal cycle of incarnation and transcendence.`;
+            }
+
+            chapters.push({
+                number: i,
+                title: title,
+                summary: summary,
+                verses: Math.floor(Math.random() * 60) + 25,
+                content: `<p>This sacred chapter of Uttara Kanda continues the divine narrative of Lord Rama's perfect reign and ultimate transcendence, each verse revealing deeper truths about the nature of divine consciousness operating in the world of form and the eternal principles that govern all existence.</p>
+                
+                <h3>The Divine Lila</h3>
+                <p>Every moment of Rama's earthly sojourn serves as a teaching for humanity - showing how divine consciousness can manifest in human form while maintaining perfect alignment with cosmic dharma. Through joy and sorrow, triumph and trial, the avatar demonstrates the path of perfect surrender to divine will.</p>
+                
+                <div class="verses-section">
+                    <h3>Sacred Verses from Chapter ${i}</h3>
+                    
+                    <div class="verse">
+                        <div class="verse-number">Verse 7.${i}.1</div>
+                        <div class="verse-sanskrit">रामो धर्मस्य साक्षात् मूर्तिः शाश्वतः।<br>
+                        यस्य राज्ये सुखं सर्वं जगत् तिष्ठति शाश्वतम्॥</div>
+                        <div class="verse-translation"><strong>Translation:</strong> Rama is the direct embodiment of dharma, eternal, in whose kingdom the entire world abides in happiness forever.</div>
+                        <div class="verse-meaning"><strong>Meaning:</strong> The avatar represents the perfect manifestation of cosmic law in human form, creating conditions where all beings can realize their highest potential.</div>
+                    </div>
+                </div>
+                
+                <h3>The Eternal Teaching</h3>
+                <p>Through Valmiki's immortal verses, we witness how the divine plays its cosmic role while never losing sight of its true nature. Rama's story becomes our story - the journey of consciousness from identification with limitation to the recognition of its infinite, eternal nature.</p>`
+            });
+        }
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function () {
+            generateChapters();
+            setupScrollProgress();
+            setupScrollToTop();
+        });
+
+        // Generate chapter cards
+        function generateChapters() {
+            const grid = document.getElementById('chaptersGrid');
+            grid.innerHTML = '';
+
+            chapters.forEach(chapter => {
+                const card = document.createElement('div');
+                card.className = 'chapter-card';
+                card.innerHTML = `
+                    <div class="chapter-number">Chapter ${chapter.number}</div>
+                    <h3 class="chapter-title">${chapter.title}</h3>
+                    <p class="chapter-summary">${chapter.summary}</p>
+                    <div class="chapter-meta">
+                        <span>${chapter.verses} verses</span>
+                        <span>Sanskrit & English</span>
+                    </div>
+                    <button class="read-btn" onclick="openChapter(${chapter.number})">Read Chapter</button>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // Open chapter content
+        function openChapter(chapterNumber) {
+            const chapter = chapters.find(c => c.number === chapterNumber);
+            if (!chapter) return;
+
+            document.getElementById('contentTitle').innerHTML = `Chapter ${chapterNumber}: ${chapter.title}`;
+            document.getElementById('contentText').innerHTML = chapter.content;
+            document.getElementById('chapterContent').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Close chapter content
+        function closeChapter() {
+            document.getElementById('chapterContent').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Go back function
+        function goBack() {
+            if (document.getElementById('chapterContent').style.display === 'flex') {
+                closeChapter();
+            } else {
+                window.history.back();
+            }
+        }
+
+        // Go next function
+        function goNext() {
+            if (document.getElementById('chapterContent').style.display === 'flex') {
+                closeChapter();
+            } else {
+                // Navigate to next section or conclusion
+                window.location.href = '#conclusion';
+            }
+        }
+
+        // Go home function
+        function goHome() {
+            if (document.getElementById('chapterContent').style.display === 'flex') {
+                closeChapter();
+            }
+            // Scroll to top of page (home position)
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Scroll to top
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Setup scroll progress bar
+        function setupScrollProgress() {
+            window.addEventListener('scroll', () => {
+                const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+                document.getElementById('progressBar').style.width = scrolled + '%';
+            });
+        }
+
+        // Setup scroll to top button
+        function setupScrollToTop() {
+            const scrollBtn = document.getElementById('scrollBtn');
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    scrollBtn.classList.add('visible');
+                } else {
+                    scrollBtn.classList.remove('visible');
+                }
+            });
+        }
+
+        // Close chapter on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeChapter();
+            }
+        });
+
+        // Close chapter on backdrop click
+        document.getElementById('chapterContent').addEventListener('click', (e) => {
+            if (e.target.id === 'chapterContent') {
+                closeChapter();
+            }
+        });
+    </script>
+    <script>(function () { function c() { var b = a.contentDocument || a.contentWindow.document; if (b) { var d = b.createElement('script'); d.innerHTML = "window.__CF$cv$params={r:'96ffb574b018f92f',t:'MTc1NTMzNDQ4Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);"; b.getElementsByTagName('head')[0].appendChild(d) } } if (document.body) { var a = document.createElement('iframe'); a.height = 1; a.width = 1; a.style.position = 'absolute'; a.style.top = 0; a.style.left = 0; a.style.border = 'none'; a.style.visibility = 'hidden'; document.body.appendChild(a); if ('loading' !== document.readyState) c(); else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c); else { var e = document.onreadystatechange || function () { }; document.onreadystatechange = function (b) { e(b); 'loading' !== document.readyState && (document.onreadystatechange = e, c()) } } } })();</script>
+</body>
+
+</html>

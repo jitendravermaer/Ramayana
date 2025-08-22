@@ -1,0 +1,1803 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../image/fevicon.png">
+    <title data-en="THE GREAT RAMAYANA" data-hi="महान रामायण" data-sa="महा रामायणम्">महा रामायणम्</title>
+    <title>Yuddha Kanda - युद्ध कांड - The Great War of Dharma</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../common.css">
+    <style>
+        :root {
+            --war-crimson: #DC143C;
+            --victory-gold: #FFD700;
+            --dharma-blue: #1E90FF;
+            --fire-orange: #FF4500;
+            --battle-bronze: #CD7F32;
+            --divine-white: #FFFAFA;
+            --shadow-black: #2F2F2F;
+            --blood-red: #8B0000;
+            --lightning-yellow: #FFFF00;
+            --ocean-teal: #008B8B;
+            --earth-brown: #8B4513;
+            --sky-azure: #87CEEB;
+            --text-dark: #1A1A1A;
+            --text-medium: #4A4A4A;
+            --text-light: #666666;
+            --shadow-light: rgba(220, 20, 60, 0.15);
+            --shadow-medium: rgba(220, 20, 60, 0.25);
+            --shadow-heavy: rgba(220, 20, 60, 0.35);
+            --glow-fire: rgba(255, 69, 0, 0.4);
+            --glow-victory: rgba(255, 215, 0, 0.4);
+            --glow-divine: rgba(30, 144, 255, 0.3);
+        }
+
+        body {
+            background:
+                radial-gradient(circle at 20% 20%, rgba(220, 20, 60, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255, 69, 0, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 50% 10%, rgba(255, 215, 0, 0.06) 0%, transparent 70%),
+                radial-gradient(circle at 30% 90%, rgba(30, 144, 255, 0.06) 0%, transparent 60%),
+                linear-gradient(135deg, #2F2F2F 0%, #4A4A4A 25%, #8B0000 50%, #DC143C 75%, #FF4500 100%);
+            color: var(--divine-white);
+
+        }
+
+        body::before {
+            background-image:
+                url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M60 10L70 40L100 40L78 58L88 88L60 70L32 88L42 58L20 40L50 40Z' fill='%23FFD700' fill-opacity='0.04'/%3E%3Cpath d='M20 20L100 20L100 100L20 100Z' stroke='%23DC143C' stroke-width='2' fill='none' fill-opacity='0.03'/%3E%3Ccircle cx='60' cy='60' r='25' fill='%23FF4500' fill-opacity='0.02'/%3E%3C/svg%3E");
+
+        }
+
+        .floating-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .floating-symbol {
+            position: absolute;
+            font-size: 2.5rem;
+            opacity: 0.08;
+            animation: battleFloat 20s ease-in-out infinite;
+            color: var(--victory-gold);
+        }
+
+        .floating-symbol:nth-child(1) {
+            top: 10%;
+            left: 15%;
+            animation-delay: 0s;
+            color: var(--war-crimson);
+        }
+
+        .floating-symbol:nth-child(2) {
+            top: 30%;
+            right: 10%;
+            animation-delay: 6s;
+            color: var(--fire-orange);
+        }
+
+        .floating-symbol:nth-child(3) {
+            bottom: 35%;
+            left: 25%;
+            animation-delay: 12s;
+            color: var(--victory-gold);
+        }
+
+        .floating-symbol:nth-child(4) {
+            bottom: 15%;
+            right: 20%;
+            animation-delay: 18s;
+            color: var(--dharma-blue);
+        }
+
+        .floating-symbol:nth-child(5) {
+            top: 60%;
+            left: 8%;
+            animation-delay: 9s;
+            color: var(--lightning-yellow);
+        }
+
+        .floating-symbol:nth-child(6) {
+            top: 80%;
+            right: 30%;
+            animation-delay: 15s;
+            color: var(--ocean-teal);
+        }
+
+        .floating-symbol:nth-child(7) {
+            top: 45%;
+            left: 50%;
+            animation-delay: 3s;
+            color: var(--battle-bronze);
+        }
+
+        .floating-symbol:nth-child(8) {
+            bottom: 60%;
+            right: 45%;
+            animation-delay: 21s;
+            color: var(--sky-azure);
+        }
+
+        @keyframes battleFloat {
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg) scale(1);
+                opacity: 0.08;
+            }
+
+            25% {
+                transform: translateY(-40px) rotate(90deg) scale(1.2);
+                opacity: 0.15;
+            }
+
+            50% {
+                transform: translateY(-20px) rotate(180deg) scale(0.9);
+                opacity: 0.05;
+            }
+
+            75% {
+                transform: translateY(-35px) rotate(270deg) scale(1.1);
+                opacity: 0.12;
+            }
+        }
+
+        .war-aura {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(circle at 25% 25%, rgba(220, 20, 60, 0.06) 0%, transparent 40%),
+                radial-gradient(circle at 75% 75%, rgba(255, 69, 0, 0.06) 0%, transparent 40%),
+                radial-gradient(circle at 50% 10%, rgba(255, 215, 0, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 30% 90%, rgba(30, 144, 255, 0.05) 0%, transparent 60%);
+            pointer-events: none;
+            z-index: -1;
+            animation: epicAura 25s ease-in-out infinite;
+        }
+
+        @keyframes epicAura {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            33% {
+                opacity: 0.8;
+            }
+
+            66% {
+                opacity: 0.95;
+            }
+        }
+
+        .back-btn {
+            background: linear-gradient(145deg, var(--war-crimson), var(--blood-red));
+            border: 2px solid rgba(255, 215, 0, 0.9);
+            color: white;
+            box-shadow:
+                0 8px 16px var(--shadow-medium),
+                inset 0 2px 4px rgba(255, 255, 255, 0.3),
+                0 0 15px var(--glow-fire);
+        }
+
+        .back-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.3), transparent);
+            transition: left 0.6s;
+        }
+
+        .back-btn:hover::before {
+            left: 100%;
+        }
+
+        .back-btn:hover {
+            transform: translateY(-8px) rotateY(15deg) scale(1.1);
+            box-shadow:
+                0 20px 40px var(--shadow-heavy),
+                inset 0 4px 8px rgba(255, 255, 255, 0.4),
+                0 0 30px var(--glow-fire);
+            border-color: var(--victory-gold);
+        }
+
+        .scroll-to-top {
+
+            background: linear-gradient(145deg, var(--war-crimson), var(--blood-red));
+            color: white;
+            border: 2px solid rgba(255, 215, 0, 0.9);
+            box-shadow:
+                0 10px 20px var(--shadow-medium),
+                inset 0 2px 4px rgba(255, 255, 255, 0.3),
+                0 0 20px var(--glow-fire);
+        }
+
+
+        .scroll-to-top:hover {
+            box-shadow:
+                0 25px 50px var(--shadow-heavy),
+                inset 0 4px 8px rgba(255, 255, 255, 0.4),
+                0 0 35px var(--glow-fire);
+            border-color: var(--victory-gold);
+        }
+
+
+        .header {
+
+            background:
+                linear-gradient(145deg, rgba(47, 47, 47, 0.95), rgba(139, 0, 0, 0.9)),
+                url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M100 20L120 60L160 60L130 90L140 130L100 110L60 130L70 90L40 60L80 60Z' fill='%23FFD700' fill-opacity='0.08'/%3E%3Cpath d='M50 50L150 50L150 150L50 150Z' stroke='%23DC143C' stroke-width='3' fill='none' fill-opacity='0.06'/%3E%3Ccircle cx='100' cy='100' r='40' fill='%23FF4500' fill-opacity='0.05'/%3E%3C/svg%3E");
+
+            box-shadow:
+                0 30px 60px var(--shadow-medium),
+                inset 0 5px 10px rgba(255, 255, 255, 0.1),
+                0 0 0 5px rgba(220, 20, 60, 0.3),
+                0 0 40px var(--glow-fire);
+            border: 4px solid rgba(255, 215, 0, 0.4);
+        }
+
+        .header::before {
+            content: '⚔️';
+            position: absolute;
+            top: 30px;
+            left: 50px;
+            font-size: 3rem;
+            opacity: 0.4;
+            animation: battleFloat 8s ease-in-out infinite;
+        }
+
+        .header::after {
+            content: '🏹';
+            position: absolute;
+            top: 30px;
+            right: 50px;
+            font-size: 3rem;
+            opacity: 0.4;
+            animation: battleFloat 8s ease-in-out infinite reverse;
+        }
+
+        .header h1 {
+            background: linear-gradient(45deg, var(--war-crimson), var(--fire-orange), var(--victory-gold), var(--dharma-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 25px;
+            font-family: 'Noto Sans Devanagari', sans-serif;
+            font-weight: 900;
+            text-shadow: 0 5px 10px var(--shadow-light);
+            position: relative;
+            line-height: 1.1;
+        }
+
+        .header .subtitle {
+            color: var(--victory-gold);
+            font-style: italic;
+            margin-bottom: 25px;
+            font-weight: 600;
+            font-family: 'Cinzel', serif;
+        }
+
+        .header .description {
+            font-size: 1.2rem;
+            color: var(--divine-white);
+            line-height: 1.8;
+            max-width: 1000px;
+            margin: 0 auto;
+            font-family: 'Crimson Text', serif;
+            font-weight: 500;
+            opacity: 0.95;
+        }
+
+        .stats-section {
+            background:
+                linear-gradient(145deg, rgba(47, 47, 47, 0.95), rgba(139, 0, 0, 0.9));
+            border-radius: 30px;
+            padding: 50px;
+            margin-bottom: 60px;
+            box-shadow:
+                0 25px 50px var(--shadow-light),
+                inset 0 3px 6px rgba(255, 255, 255, 0.1),
+                0 0 30px var(--glow-fire);
+            border: 3px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .stat-card {
+            background: linear-gradient(145deg, rgba(47, 47, 47, 0.95), rgba(139, 0, 0, 0.9));
+            border-radius: 25px;
+            padding: 40px;
+            text-align: center;
+            box-shadow:
+                0 15px 30px var(--shadow-light),
+                inset 0 3px 6px rgba(255, 255, 255, 0.1),
+                0 0 20px var(--glow-fire);
+            border: 3px solid rgba(255, 215, 0, 0.3);
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, var(--war-crimson), var(--victory-gold));
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            border-radius: 22px;
+        }
+
+        .stat-card:hover::before {
+            opacity: 0.15;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-12px) scale(1.03);
+            box-shadow:
+                0 25px 50px var(--shadow-medium),
+                inset 0 4px 8px rgba(255, 255, 255, 0.15),
+                0 0 35px var(--glow-fire);
+            border-color: var(--victory-gold);
+        }
+
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 900;
+            background: linear-gradient(45deg, var(--war-crimson), var(--fire-orange), var(--victory-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+            font-family: 'Cinzel', serif;
+        }
+
+        .stat-label {
+            font-size: 1.2rem;
+            color: var(--divine-white);
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+            opacity: 0.9;
+        }
+
+        .war-timeline {
+            background:
+                linear-gradient(145deg, rgba(47, 47, 47, 0.98), rgba(139, 0, 0, 0.95)),
+                url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 10L60 30L80 30L65 45L70 65L50 55L30 65L35 45L20 30L40 30Z' fill='%23FFD700' fill-opacity='0.05'/%3E%3Cpath d='M25 25L75 25L75 75L25 75Z' stroke='%23DC143C' stroke-width='2' fill='none' fill-opacity='0.04'/%3E%3C/svg%3E");
+            border-radius: 35px;
+            padding: 60px;
+            margin-bottom: 60px;
+            box-shadow:
+                0 30px 60px var(--shadow-medium),
+                inset 0 4px 8px rgba(255, 255, 255, 0.1),
+                0 0 40px var(--glow-fire);
+            border: 4px solid rgba(255, 215, 0, 0.4);
+            position: relative;
+        }
+
+        .timeline-title {
+            text-align: center;
+            font-size: 3.5rem;
+            color: var(--victory-gold);
+            margin-bottom: 50px;
+            font-family: 'Noto Sans Devanagari', sans-serif;
+            background: linear-gradient(45deg, var(--war-crimson), var(--fire-orange), var(--victory-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 800;
+            position: relative;
+        }
+
+        .timeline-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 5px;
+            background: linear-gradient(45deg, var(--war-crimson), var(--victory-gold));
+            border-radius: 3px;
+        }
+
+        .timeline-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .timeline-event {
+            background:
+                linear-gradient(145deg, rgba(47, 47, 47, 0.98), rgba(139, 0, 0, 0.95));
+            border-radius: 25px;
+            padding: 35px;
+            box-shadow:
+                0 20px 40px var(--shadow-light),
+                inset 0 3px 6px rgba(255, 255, 255, 0.1),
+                0 0 25px var(--glow-fire);
+            border: 3px solid rgba(255, 215, 0, 0.3);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .timeline-event::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(220, 20, 60, 0.08) 0%, rgba(255, 215, 0, 0.08) 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            border-radius: 22px;
+        }
+
+        .timeline-event:hover::before {
+            opacity: 1;
+        }
+
+        .timeline-event:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow:
+                0 30px 60px var(--shadow-medium),
+                inset 0 4px 8px rgba(255, 255, 255, 0.15),
+                0 0 35px var(--glow-fire);
+            border-color: var(--victory-gold);
+        }
+
+        .event-day {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: var(--victory-gold);
+            margin-bottom: 20px;
+            background: rgba(220, 20, 60, 0.2);
+            padding: 8px 16px;
+            border-radius: 25px;
+            display: inline-block;
+            position: relative;
+            z-index: 1;
+        }
+
+        .event-title {
+            font-size: 1.4rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: var(--divine-white);
+            line-height: 1.4;
+            position: relative;
+            z-index: 1;
+        }
+
+        .event-description {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: var(--divine-white);
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 1;
+            opacity: 0.9;
+        }
+
+        .event-significance {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--divine-white);
+            background: rgba(220, 20, 60, 0.15);
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 5px solid var(--victory-gold);
+            position: relative;
+            z-index: 1;
+            font-style: italic;
+            opacity: 0.85;
+        }
+
+        .warriors-section {
+            background:
+                linear-gradient(145deg, rgba(47, 47, 47, 0.95), rgba(139, 0, 0, 0.9));
+            border-radius: 35px;
+            padding: 60px;
+            margin-bottom: 60px;
+            box-shadow:
+                0 30px 60px var(--shadow-medium),
+                inset 0 4px 8px rgba(255, 255, 255, 0.1),
+                0 0 40px var(--glow-fire);
+            border: 4px solid rgba(255, 215, 0, 0.4);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3.5rem;
+            color: var(--victory-gold);
+            margin-bottom: 50px;
+            font-family: 'Noto Sans Devanagari', sans-serif;
+            background: linear-gradient(45deg, var(--war-crimson), var(--fire-orange), var(--victory-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 800;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 5px;
+            background: linear-gradient(45deg, var(--war-crimson), var(--victory-gold));
+            border-radius: 3px;
+        }
+
+        .warriors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 35px;
+            margin-bottom: 50px;
+        }
+
+        .warrior-card {
+            background:
+                linear-gradient(145deg, rgba(47, 47, 47, 0.98), rgba(139, 0, 0, 0.95));
+            border-radius: 25px;
+            padding: 30px;
+            box-shadow:
+                0 20px 40px var(--shadow-light),
+                inset 0 3px 6px rgba(255, 255, 255, 0.1),
+                0 0 25px var(--glow-fire);
+            border: 3px solid rgba(255, 215, 0, 0.3);
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .warrior-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(220, 20, 60, 0.1) 0%, rgba(255, 215, 0, 0.1) 100%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            border-radius: 22px;
+        }
+
+        .warrior-card:hover::before {
+            opacity: 1;
+        }
+
+        .warrior-card:hover {
+            transform: translateY(-15px) scale(1.03);
+            box-shadow:
+                0 35px 70px var(--shadow-medium),
+                inset 0 4px 8px rgba(255, 255, 255, 0.15),
+                0 0 40px var(--glow-fire);
+            border-color: var(--victory-gold);
+        }
+
+        .warrior-avatar {
+            width: 100%;
+            height: 200px;
+            background:
+                linear-gradient(135deg, var(--war-crimson), var(--victory-gold)),
+                url("data:image/svg+xml,%3Csvg width='150' height='150' viewBox='0 0 150 150' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M75 15L90 45L120 45L97.5 62.5L105 92.5L75 80L45 92.5L52.5 62.5L30 45L60 45Z' fill='white' fill-opacity='0.3'/%3E%3Ccircle cx='75' cy='75' r='30' fill='white' fill-opacity='0.2'/%3E%3C/svg%3E");
+            background-size: cover;
+            background-position: center;
+            border-radius: 20px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .warrior-avatar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.15) 50%, transparent 70%);
+            animation: warShimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes warShimmer {
+            0% {
+                transform: translateX(-100%);
+            }
+
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
+        .warrior-name {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--divine-white);
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .warrior-title {
+            font-size: 1.1rem;
+            color: var(--victory-gold);
+            margin-bottom: 20px;
+            font-weight: 600;
+            position: relative;
+            z-index: 1;
+        }
+
+        .warrior-description {
+            font-size: 1rem;
+            color: var(--divine-white);
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
+            opacity: 0.9;
+        }
+
+        .battles-section {
+            background:
+                linear-gradient(145deg, rgba(47, 47, 47, 0.95), rgba(139, 0, 0, 0.9));
+            border-radius: 35px;
+            padding: 60px;
+            box-shadow:
+                0 30px 60px var(--shadow-medium),
+                inset 0 4px 8px rgba(255, 255, 255, 0.1),
+                0 0 40px var(--glow-fire);
+            border: 4px solid rgba(255, 215, 0, 0.4);
+        }
+
+        .battles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .battle-card {
+            background:
+                linear-gradient(145deg, rgba(47, 47, 47, 0.98), rgba(139, 0, 0, 0.95)),
+                url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5L36 18L49 18L39 26L42 39L30 33L18 39L21 26L11 18L24 18Z' fill='%23FFD700' fill-opacity='0.06'/%3E%3Cpath d='M15 15L45 15L45 45L15 45Z' stroke='%23DC143C' stroke-width='2' fill='none' fill-opacity='0.04'/%3E%3C/svg%3E");
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow:
+                0 15px 30px var(--shadow-medium),
+                inset 0 3px 6px rgba(255, 255, 255, 0.1),
+                0 0 0 2px rgba(255, 215, 0, 0.3),
+                0 0 20px var(--glow-fire);
+            border: 3px solid transparent;
+            background-clip: padding-box;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .battle-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                linear-gradient(135deg, rgba(220, 20, 60, 0.1) 0%, rgba(255, 215, 0, 0.1) 50%, rgba(255, 69, 0, 0.1) 100%);
+            opacity: 0;
+            transition: opacity 0.6s ease;
+            border-radius: 26px;
+        }
+
+        .battle-card::after {
+            content: '⚔️';
+            position: absolute;
+            top: 25px;
+            right: 30px;
+            font-size: 2rem;
+            opacity: 0.3;
+            animation: battleFloat 8s ease-in-out infinite;
+        }
+
+        .battle-card:hover {
+            transform: translateY(-20px) scale(1.04);
+            box-shadow:
+                0 40px 80px var(--shadow-heavy),
+                inset 0 5px 10px rgba(255, 255, 255, 0.15),
+                0 0 0 4px rgba(255, 215, 0, 0.5),
+                0 0 50px var(--glow-fire);
+            border-color: rgba(255, 215, 0, 0.7);
+        }
+
+        .battle-card:hover::before {
+            opacity: 1;
+        }
+
+        .battle-day {
+            font-size: 2.2rem;
+            font-weight: 900;
+            background: linear-gradient(45deg, var(--war-crimson), var(--fire-orange), var(--victory-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            display: inline-block;
+            position: relative;
+            z-index: 1;
+            font-family: 'Cinzel', serif;
+        }
+
+        .battle-title {
+            font-size: 1.4rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: var(--divine-white);
+            line-height: 1.4;
+            position: relative;
+            z-index: 1;
+        }
+
+        .battle-summary {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: var(--divine-white);
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 1;
+            opacity: 0.9;
+        }
+
+        .battle-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            font-size: 0.95rem;
+            color: var(--divine-white);
+            position: relative;
+            z-index: 1;
+            opacity: 0.8;
+        }
+
+        .read-btn {
+            background: linear-gradient(45deg, var(--war-crimson), var(--fire-orange));
+            color: white;
+            border: none;
+            border-radius: 30px;
+            padding: 15px 30px;
+            cursor: pointer;
+            font-weight: 700;
+            transition: all 0.4s ease;
+            font-size: 1.1rem;
+            box-shadow:
+                0 8px 16px var(--shadow-medium),
+                0 0 20px var(--glow-fire);
+            width: 100%;
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .read-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.3), transparent);
+            transition: left 0.6s;
+        }
+
+        .read-btn:hover::before {
+            left: 100%;
+        }
+
+        .read-btn:hover {
+            transform: translateY(-4px);
+            box-shadow:
+                0 12px 24px var(--shadow-heavy),
+                0 0 30px var(--glow-fire);
+        }
+
+        .battle-content {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 2000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 25px;
+            backdrop-filter: blur(10px);
+        }
+
+        .content-box {
+            background:
+                linear-gradient(145deg, rgba(47, 47, 47, 0.98), rgba(139, 0, 0, 0.95));
+            border-radius: 35px;
+            padding: 60px;
+            max-width: 1200px;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow:
+                0 40px 80px var(--shadow-heavy),
+                inset 0 5px 10px rgba(255, 255, 255, 0.1),
+                0 0 60px var(--glow-fire);
+            border: 4px solid rgba(255, 215, 0, 0.5);
+            position: relative;
+            animation: slideIn 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-80px) scale(0.8);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 25px;
+            right: 30px;
+            background: linear-gradient(45deg, var(--war-crimson), var(--fire-orange));
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            font-size: 1.5rem;
+            font-weight: bold;
+            transition: all 0.4s ease;
+            box-shadow:
+                0 8px 16px var(--shadow-medium),
+                0 0 20px var(--glow-fire);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .close-btn:hover {
+            transform: scale(1.2) rotate(90deg);
+            box-shadow:
+                0 12px 24px var(--shadow-heavy),
+                0 0 30px var(--glow-fire);
+        }
+
+        .content-title {
+            font-size: 2.5rem;
+            color: var(--victory-gold);
+            margin-bottom: 30px;
+            font-weight: 800;
+            text-align: center;
+            background: linear-gradient(45deg, var(--war-crimson), var(--fire-orange), var(--victory-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.3;
+        }
+
+        .content-text {
+            font-size: 1.15rem;
+            line-height: 1.9;
+            color: var(--divine-white);
+            text-align: justify;
+            font-family: 'Crimson Text', serif;
+            opacity: 0.95;
+        }
+
+        .content-text p {
+            margin-bottom: 30px;
+        }
+
+        .content-text h3 {
+            color: var(--victory-gold);
+            margin: 40px 0 25px 0;
+            font-size: 1.6rem;
+            font-weight: 700;
+        }
+
+        .verses-section {
+            background:
+                linear-gradient(145deg, rgba(139, 0, 0, 0.2), rgba(220, 20, 60, 0.15));
+            border-radius: 25px;
+            padding: 35px;
+            margin: 35px 0;
+            border-left: 6px solid var(--victory-gold);
+            box-shadow:
+                0 10px 20px var(--shadow-light),
+                0 0 25px var(--glow-fire);
+        }
+
+        .verse {
+            background: rgba(47, 47, 47, 0.8);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 25px 0;
+            border: 3px solid rgba(255, 215, 0, 0.3);
+            box-shadow:
+                0 8px 16px var(--shadow-light),
+                0 0 20px var(--glow-fire);
+            transition: all 0.4s ease;
+        }
+
+        .verse:hover {
+            transform: translateY(-3px);
+            box-shadow:
+                0 15px 30px var(--shadow-medium),
+                0 0 30px var(--glow-fire);
+            border-color: var(--victory-gold);
+        }
+
+        .verse-number {
+            font-weight: 800;
+            color: var(--victory-gold);
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            background: rgba(220, 20, 60, 0.2);
+            padding: 8px 16px;
+            border-radius: 25px;
+            display: inline-block;
+        }
+
+        .verse-sanskrit {
+            font-family: 'Noto Sans Devanagari', sans-serif;
+            font-size: 1.3rem;
+            line-height: 2.2;
+            color: var(--divine-white);
+            margin-bottom: 25px;
+            font-style: italic;
+            text-align: center;
+            background: rgba(220, 20, 60, 0.15);
+            padding: 25px;
+            border-radius: 15px;
+            border: 2px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .verse-translation {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--divine-white);
+            margin-bottom: 20px;
+            font-weight: 600;
+            opacity: 0.95;
+        }
+
+        .verse-meaning {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: var(--divine-white);
+            font-style: italic;
+            background: rgba(220, 20, 60, 0.15);
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 5px solid var(--victory-gold);
+            opacity: 0.9;
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--war-crimson), var(--victory-gold));
+            z-index: 1001;
+            transition: width 0.3s ease;
+            box-shadow: 0 0 10px var(--glow-fire);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .battles-grid {
+                grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+                gap: 30px;
+            }
+
+            .timeline-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            .header {
+                padding: 40px 25px;
+                margin-bottom: 40px;
+            }
+
+            .header h1 {
+                font-size: 3rem;
+                line-height: 1.1;
+            }
+
+            .header .subtitle {
+                font-size: 1.3rem;
+            }
+
+            .header .description {
+                font-size: 1.05rem;
+                line-height: 1.7;
+            }
+
+            .battles-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .battle-card {
+                padding: 30px 25px;
+            }
+
+            .battle-title {
+                font-size: 1.3rem;
+            }
+
+            .battle-summary {
+                font-size: 1rem;
+            }
+
+            .content-box {
+                margin: 15px;
+                padding: 30px 25px;
+                max-height: 85vh;
+            }
+
+            .content-title {
+                font-size: 2rem;
+                margin-bottom: 25px;
+            }
+
+            .content-text {
+                font-size: 1rem;
+                line-height: 1.8;
+            }
+
+            .verse-sanskrit {
+                font-size: 1.2rem;
+                padding: 20px;
+            }
+
+            .verse-translation,
+            .verse-meaning {
+                font-size: 0.95rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+
+            .stat-card {
+                padding: 25px 20px;
+            }
+
+            .stat-number {
+                font-size: 3rem;
+            }
+
+            .stat-label {
+                font-size: 1.1rem;
+            }
+
+            .section-title,
+            .timeline-title {
+                font-size: 2.5rem;
+                margin-bottom: 35px;
+            }
+
+            .timeline-event {
+                padding: 25px 20px;
+            }
+
+            .warriors-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 25px;
+            }
+
+            .warrior-card {
+                padding: 25px 20px;
+            }
+
+            .warrior-avatar {
+                height: 150px;
+                font-size: 3rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 10px;
+            }
+
+            .header {
+                padding: 30px 20px;
+            }
+
+            .header h1 {
+                font-size: 2.2rem;
+                line-height: 1.1;
+            }
+
+            .header .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .header .description {
+                font-size: 1rem;
+            }
+
+            .battle-card {
+                padding: 25px 20px;
+            }
+
+            .battle-day {
+                font-size: 2rem;
+            }
+
+            .battle-title {
+                font-size: 1.2rem;
+            }
+
+            .battle-summary {
+                font-size: 0.95rem;
+            }
+
+            .content-box {
+                padding: 25px 20px;
+                margin: 10px;
+            }
+
+            .content-title {
+                font-size: 1.8rem;
+            }
+
+            .content-text {
+                font-size: 0.95rem;
+            }
+
+            .verse-sanskrit {
+                font-size: 1.1rem;
+                padding: 15px;
+            }
+
+            .verse-translation,
+            .verse-meaning {
+                font-size: 0.9rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .stat-card {
+                padding: 20px 15px;
+            }
+
+            .stat-number {
+                font-size: 2.5rem;
+            }
+
+            .stat-label {
+                font-size: 1rem;
+            }
+
+            .section-title,
+            .timeline-title {
+                font-size: 2rem;
+            }
+
+            .control-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+
+            .scroll-to-top {
+                width: 60px;
+                height: 60px;
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .warriors-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .warrior-avatar {
+                height: 120px;
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .section-title,
+            .timeline-title {
+                font-size: 1.8rem;
+            }
+
+            .content-title {
+                font-size: 1.6rem;
+            }
+
+            .verse-sanskrit {
+                font-size: 1rem;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+
+            .controls,
+            .scroll-to-top,
+            .floating-elements,
+            .war-aura {
+                display: none;
+            }
+
+            .battle-content {
+                position: static;
+                background: white;
+                display: block;
+            }
+
+            .content-box {
+                box-shadow: none;
+                border: 1px solid #ccc;
+                max-height: none;
+                overflow: visible;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="war-aura"></div>
+
+    <div class="floating-elements">
+        <div class="floating-symbol">⚔️</div>
+        <div class="floating-symbol">🏹</div>
+        <div class="floating-symbol">🔥</div>
+        <div class="floating-symbol">⚡</div>
+        <div class="floating-symbol">🌊</div>
+        <div class="floating-symbol">🏔️</div>
+        <div class="floating-symbol">👑</div>
+        <div class="floating-symbol">🌟</div>
+    </div>
+
+
+    <div class="controls">
+        <a href="../sundara-kanda/sundara-kanda.html" class="back-btn" onclick="goBack()" title="Go Back">←</a>
+        <a href="../index.html" class="back-btn" onclick="goHome()" title="Go Home">🏠</a>
+        <a href="../uttara-kanda/uttara-kanda.html" class="back-btn" onclick="goNext()" title="Go Next">→</a>
+    </div>
+
+    <button class="scroll-to-top" onclick="scrollToTop()" id="scrollBtn">↑</button>
+
+    <div class="container">
+        <!-- Introduction Section -->
+        <div class="header">
+            <h1>Yuddha Kanda<br><span style="font-size: 0.7em;">युद्ध कांड</span></h1>
+            <p class="subtitle">The Great War - The Ultimate Battle Between Good and Evil</p>
+            <p class="description">The sixth and most dramatic book of Valmiki's Ramayana, Yuddha Kanda chronicles the
+                epic war in Lanka between the forces of dharma led by Lord Rama and the forces of adharma commanded by
+                the ten-headed demon king Ravana. This sacred text reveals the ultimate triumph of righteousness over
+                evil, the power of divine intervention, and the eternal truth that dharma, though it may face trials,
+                will always emerge victorious in the cosmic battle between light and darkness.</p>
+        </div>
+
+        <!-- Statistics Section -->
+        <div class="stats-section">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">128</div>
+                    <div class="stat-label">Epic Chapters</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">3,971</div>
+                    <div class="stat-label">Verses of War</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">18</div>
+                    <div class="stat-label">Days of Battle</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">∞</div>
+                    <div class="stat-label">Divine Victory</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Dharma Triumphant</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- War Timeline Section -->
+        <div class="war-timeline">
+            <h2 class="timeline-title">The 18 Days of Epic War</h2>
+
+            <div class="timeline-grid">
+                <div class="timeline-event">
+                    <div class="event-day">Day 1-3</div>
+                    <h3 class="event-title">The War Begins</h3>
+                    <p class="event-description">The mighty armies of Lanka and the vanaras face each other on the
+                        battlefield. Rama's forces, though smaller, are blessed with divine purpose. The first clashes
+                        reveal the immense power on both sides as great warriors fall and rise again.</p>
+                    <div class="event-significance">The opening battles represent the initial confrontation between
+                        dharma and adharma, where the forces of righteousness must prove their resolve against
+                        overwhelming odds.</div>
+                </div>
+
+                <div class="timeline-event">
+                    <div class="event-day">Day 4-6</div>
+                    <h3 class="event-title">Indrajit's Sorcery</h3>
+                    <p class="event-description">Ravana's son Indrajit (Meghnad) unleashes his most powerful weapons and
+                        illusions, creating havoc in Rama's army. Using his mastery of maya, he renders himself
+                        invisible and strikes devastating blows against the vanara forces.</p>
+                    <div class="event-significance">This phase shows how evil uses deception and illusion to gain
+                        advantage, testing the faith and determination of those who fight for truth.</div>
+                </div>
+
+                <div class="timeline-event">
+                    <div class="event-day">Day 7-9</div>
+                    <h3 class="event-title">Hanuman's Valor</h3>
+                    <p class="event-description">The mighty Hanuman displays his incredible strength and devotion,
+                        single-handedly destroying vast portions of Ravana's army. His unwavering faith in Rama becomes
+                        a source of inspiration for all the vanara warriors.</p>
+                    <div class="event-significance">Hanuman's exploits demonstrate how pure devotion becomes an
+                        unstoppable force, capable of overcoming any obstacle when aligned with divine will.</div>
+                </div>
+
+                <div class="timeline-event">
+                    <div class="event-day">Day 10-12</div>
+                    <h3 class="event-title">Lakshmana's Trial</h3>
+                    <p class="event-description">Lakshmana falls unconscious from Indrajit's Brahmastra, creating a
+                        crisis in Rama's camp. Hanuman's heroic journey to bring the Sanjeevani herb from the Himalayas
+                        saves Lakshmana's life and turns the tide of war.</p>
+                    <div class="event-significance">This episode reveals how dharma faces its darkest moments before
+                        dawn, and how divine grace manifests through the selfless service of devotees.</div>
+                </div>
+
+                <div class="timeline-event">
+                    <div class="event-day">Day 13-15</div>
+                    <h3 class="event-title">The Fall of Great Warriors</h3>
+                    <p class="event-description">Mighty warriors on both sides fall in battle. Kumbhakarna, Ravana's
+                        giant brother, awakens and fights valiantly before being slain by Rama. The war reaches its most
+                        intense phase as both armies suffer heavy losses.</p>
+                    <div class="event-significance">These battles show that even in cosmic conflicts, great souls on
+                        both sides must fulfill their dharma, regardless of which side they serve.</div>
+                </div>
+
+                <div class="timeline-event">
+                    <div class="event-day">Day 16-17</div>
+                    <h3 class="event-title">Indrajit's End</h3>
+                    <p class="event-description">Lakshmana, guided by Vibhishana's counsel, finally defeats the
+                        invincible Indrajit in single combat. This victory removes Ravana's greatest weapon and
+                        protector, paving the way for the final confrontation.</p>
+                    <div class="event-significance">The defeat of Indrajit represents the triumph of righteousness over
+                        the most sophisticated forms of evil and deception.</div>
+                </div>
+
+                <div class="timeline-event">
+                    <div class="event-day">Day 18</div>
+                    <h3 class="event-title">Rama vs Ravana</h3>
+                    <p class="event-description">The ultimate battle between Rama and Ravana shakes the three worlds.
+                        After an epic duel showcasing divine weapons and cosmic powers, Rama finally slays Ravana with
+                        the Brahmastra, ending the war and evil's reign.</p>
+                    <div class="event-significance">This final battle represents the ultimate victory of divine
+                        consciousness over the ego, the triumph of dharma over adharma for all time.</div>
+                </div>
+
+                <div class="timeline-event">
+                    <div class="event-day">Victory</div>
+                    <h3 class="event-title">Sita's Liberation</h3>
+                    <p class="event-description">With Ravana's death, Sita is finally freed from her captivity. The
+                        reunion of Rama and Sita, though marked by the trial of fire, represents the restoration of
+                        cosmic order and the triumph of truth and purity.</p>
+                    <div class="event-significance">Sita's liberation symbolizes the soul's freedom from the bondage of
+                        ignorance and its reunion with the divine consciousness.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Warriors Section -->
+        <div class="warriors-section">
+            <h2 class="section-title">Epic Warriors of the Great War</h2>
+
+            <div class="warriors-grid">
+                <div class="warrior-card">
+                    <div class="warrior-avatar">🏹</div>
+                    <h3 class="warrior-name">Lord Rama</h3>
+                    <p class="warrior-title">Divine Avatar, Supreme Commander</p>
+                    <p class="warrior-description">The seventh incarnation of Vishnu, wielding the cosmic bow and divine
+                        astras. His presence on the battlefield ensures the ultimate victory of dharma over all forces
+                        of evil.</p>
+                </div>
+
+                <div class="warrior-card">
+                    <div class="warrior-avatar">⚔️</div>
+                    <h3 class="warrior-name">Lakshmana</h3>
+                    <p class="warrior-title">Devoted Brother, Mighty Warrior</p>
+                    <p class="warrior-description">Rama's loyal brother and greatest supporter, whose unwavering
+                        devotion and martial prowess make him invincible in battle. The slayer of the mighty Indrajit.
+                    </p>
+                </div>
+
+                <div class="warrior-card">
+                    <div class="warrior-avatar">💪</div>
+                    <h3 class="warrior-name">Hanuman</h3>
+                    <p class="warrior-title">Son of Wind, Perfect Devotee</p>
+                    <p class="warrior-description">The mighty vanara whose strength knows no bounds when serving Rama.
+                        His heroic deeds in the war become legendary, inspiring courage in all righteous hearts.</p>
+                </div>
+
+                <div class="warrior-card">
+                    <div class="warrior-avatar">👑</div>
+                    <h3 class="warrior-name">Sugriva</h3>
+                    <p class="warrior-title">Vanara King, Loyal Ally</p>
+                    <p class="warrior-description">The king of the vanaras who leads his mighty army in service of Rama,
+                        proving that true kingship means serving the cause of dharma above all else.</p>
+                </div>
+
+                <div class="warrior-card">
+                    <div class="warrior-avatar">🌊</div>
+                    <h3 class="warrior-name">Angada</h3>
+                    <p class="warrior-title">Vanara Prince, Brave Messenger</p>
+                    <p class="warrior-description">The valiant son of Vali, whose courage and strength in battle match
+                        his diplomatic skills. A key figure in both negotiation and warfare.</p>
+                </div>
+
+                <div class="warrior-card">
+                    <div class="warrior-avatar">🔥</div>
+                    <h3 class="warrior-name">Ravana</h3>
+                    <p class="warrior-title">Ten-Headed King, Master of Astras</p>
+                    <p class="warrior-description">The mighty demon king of Lanka, learned in all scriptures and master
+                        of divine weapons, whose pride and ego ultimately lead to his downfall despite his great power.
+                    </p>
+                </div>
+
+                <div class="warrior-card">
+                    <div class="warrior-avatar">⚡</div>
+                    <h3 class="warrior-name">Indrajit (Meghnad)</h3>
+                    <p class="warrior-title">Conqueror of Indra, Master of Maya</p>
+                    <p class="warrior-description">Ravana's son, the most formidable warrior in Lanka's army, master of
+                        illusion and divine weapons, whose defeat marks the turning point of the war.</p>
+                </div>
+
+                <div class="warrior-card">
+                    <div class="warrior-avatar">🏔️</div>
+                    <h3 class="warrior-name">Kumbhakarna</h3>
+                    <p class="warrior-title">Giant Brother, Reluctant Warrior</p>
+                    <p class="warrior-description">Ravana's massive brother, who despite knowing the righteousness of
+                        Rama's cause, fights loyally for his family, embodying the tragic nobility of duty over personal
+                        conviction.</p>
+                </div>
+
+                <div class="warrior-card">
+                    <div class="warrior-avatar">🕊️</div>
+                    <h3 class="warrior-name">Vibhishana</h3>
+                    <p class="warrior-title">Righteous Rakshasa, Divine Ally</p>
+                    <p class="warrior-description">Ravana's younger brother who chooses dharma over family loyalty,
+                        providing crucial intelligence to Rama's forces and proving that righteousness transcends all
+                        bonds.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Battles Section -->
+        <div class="battles-section" id="battles">
+            <h2 class="section-title">Epic Battles and Divine Interventions</h2>
+
+            <div class="battles-grid" id="battlesGrid">
+                <!-- Battles will be dynamically generated -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Battle Content Modal -->
+    <div class="battle-content" id="battleContent">
+        <div class="content-box">
+            <button class="close-btn" onclick="closeBattle()">×</button>
+            <h2 class="content-title" id="contentTitle"></h2>
+            <div class="content-text" id="contentText"></div>
+        </div>
+    </div>
+
+    <script>
+        // Comprehensive battle data for Yuddha Kanda
+        const battles = [
+            {
+                day: "Day 1",
+                title: "The War Commences",
+                summary: "The mighty armies of Lanka and the vanaras face each other as the epic war begins. Rama's blessing ensures divine protection for the righteous forces.",
+                warriors: "All Forces",
+                outcome: "Initial Skirmishes",
+                content: `<p>As the crimson dawn breaks over the golden shores of Lanka, history witnesses the commencement of the most epic war between the forces of dharma and adharma. The very earth trembles as two mighty armies face each other across the battlefield - the righteous vanaras led by the divine Rama, and the powerful rakshasas commanded by the ten-headed Ravana.</p>
+                
+                <h3>The Divine Army Assembles</h3>
+                <p>On one side stands Rama, the seventh avatar of Vishnu, his divine bow gleaming with celestial light. Beside him, Lakshmana holds his weapons with unwavering determination, while the mighty Hanuman's presence fills the vanara army with courage. Sugriva, the vanara king, surveys his forces - millions of monkey warriors whose devotion to Rama makes them fearless in the face of death.</p>
+                
+                <div class="verses-section">
+                    <h3>Sacred Verses from the War's Beginning</h3>
+                    
+                    <div class="verse">
+                        <div class="verse-number">Verse 6.1.1</div>
+                        <div class="verse-sanskrit">रामो धनुर्धरः श्रीमान् लक्ष्मणेन सहायवान्।<br>
+                        युद्धाय समुपागच्छत् रावणं रणमूर्धनि॥</div>
+                        <div class="verse-translation"><strong>Translation:</strong> The glorious Rama, bearer of the bow, accompanied by Lakshmana as his aide, approached Ravana at the forefront of battle for war.</div>
+                        <div class="verse-meaning"><strong>Spiritual Meaning:</strong> When divine consciousness (Rama) decides to confront ignorance (Ravana), it is always supported by discrimination (Lakshmana) and approaches the battle with complete preparation.</div>
+                    </div>
+
+                    <div class="verse">
+                        <div class="verse-number">Verse 6.1.2</div>
+                        <div class="verse-sanskrit">हरीणां कोटिसंख्यानां रावणस्य च रक्षसाम्।<br>
+                        युद्धं समजायत घोरं देवासुरसमं महत्॥</div>
+                        <div class="verse-translation"><strong>Translation:</strong> A terrible great war began between crores of vanaras and Ravana's rakshasas, like the war between gods and demons.</div>
+                        <div class="verse-meaning"><strong>Meaning:</strong> This cosmic battle represents the eternal struggle between the forces of light and darkness that occurs both in the universe and within every individual soul.</div>
+                    </div>
+                </div>
+                
+                <h3>The First Clash</h3>
+                <p>As the conch shells sound and war drums thunder across the battlefield, the first arrows are released. The sky darkens with the flight of countless weapons as both armies charge toward each other with earth-shaking roars. This is not merely a war between two kingdoms, but the cosmic battle between righteousness and evil, playing out on the sacred soil of Lanka.</p>`
+            },
+            {
+                day: "Day 2",
+                title: "Indrajit's First Strike",
+                summary: "Ravana's mighty son Indrajit enters the battle, wielding powerful astras and creating havoc among the vanara forces with his supernatural abilities.",
+                warriors: "Indrajit vs Vanara Army",
+                outcome: "Rakshasa Advantage",
+                content: `<p>The second day of war dawns with ominous clouds gathering over Lanka as Indrajit, the conqueror of Indra himself, prepares to demonstrate why he is considered the most formidable warrior in Ravana's army. His very name strikes fear into the hearts of gods, and today the vanaras will face his terrible might.</p>
+                
+                <h3>The Master of Celestial Weapons</h3>
+                <p>Indrajit appears on the battlefield like a dark storm cloud, his chariot drawn by supernatural steeds that seem to fly through the air. Having mastered the art of maya (illusion) and possessing divine astras granted by the gods themselves, he represents the pinnacle of rakshasa military might. His bow, blessed by Lord Shiva, has never known defeat.</p>
+                
+                <div class="verses-section">
+                    <h3>Sacred Verses of Indrajit's Power</h3>
+                    
+                    <div class="verse">
+                        <div class="verse-number">Verse 6.2.1</div>
+                        <div class="verse-sanskrit">इन्द्रजित् रणमध्ये तु दिव्यास्त्रैः समलंकृतः।<br>
+                        वानरान् भयसंत्रस्तान् अकरोत् स महाबलः॥</div>
+                        <div class="verse-translation"><strong>Translation:</strong> The mighty Indrajit, adorned with divine weapons in the midst of battle, made the vanaras terror-stricken.</div>
+                        <div class="verse-meaning"><strong>Meaning:</strong> The power of illusion and ego (Indrajit) can initially overwhelm even devoted souls, creating fear and confusion in their spiritual journey.</div>
+                    </div>
+                </div>
+                
+                <h3>The Vanara Response</h3>
+                <p>Though initially overwhelmed by Indrajit's supernatural assault, the vanara warriors remember their devotion to Rama and find courage in their hearts. Led by Hanuman and Angada, they regroup and launch counter-attacks, proving that while evil may gain temporary advantage through deception, the forces of righteousness possess an inner strength that cannot be permanently defeated.</p>`
+            }
+        ];
+
+        // Generate remaining battles (simplified for demo)
+        const battleTitles = [
+            "Hanuman's Rampage", "The Bridge Defenders", "Angada's Valor", "Kumbhakarna Awakens",
+            "The Giant's Fury", "Lakshmana's Wound", "The Sanjeevani Mission", "Hanuman's Return",
+            "The Healing Miracle", "Ravana's Desperation", "The Brahmastra Clash", "Indrajit's Invisibility",
+            "The Maya War", "Vibhishana's Guidance", "The Secret Yajna", "Lakshmana vs Indrajit",
+            "The Conqueror Falls", "Ravana's Grief", "The Final Preparations", "Rama vs Ravana - Round 1",
+            "The Divine Weapons", "Cosmic Powers Unleashed", "The Chariot Battle", "Ravana's Ten Heads",
+            "The Ultimate Astra", "Victory of Dharma"
+        ];
+
+        for (let i = 3; i <= 28; i++) {
+            const title = battleTitles[i - 3] || `Epic Battle ${i}`;
+            let summary, warriors, outcome;
+
+            if (i <= 10) {
+                summary = `Continuing battles showcase the valor of both armies as supernatural powers clash with divine devotion in spectacular combat.`;
+                warriors = "Various Heroes";
+                outcome = "Escalating Conflict";
+            } else if (i <= 20) {
+                summary = `The war intensifies as great warriors fall and rise, with divine interventions shaping the course of battle.`;
+                warriors = "Major Champions";
+                outcome = "Turning Tide";
+            } else {
+                summary = `The final phase of war approaches as the ultimate confrontation between Rama and Ravana draws near.`;
+                warriors = "Divine Forces";
+                outcome = "Dharma Ascendant";
+            }
+
+            battles.push({
+                day: `Day ${Math.ceil(i / 2)}`,
+                title: title,
+                summary: summary,
+                warriors: warriors,
+                outcome: outcome,
+                content: `<p>This pivotal moment in the great war of Lanka demonstrates the eternal principles that govern the cosmic battle between righteousness and evil. Every clash of weapons, every display of valor, and every act of sacrifice serves to illustrate the deeper spiritual truths that guide the universe.</p>
+                
+                <h3>The Divine Drama Unfolds</h3>
+                <p>As the war progresses, each battle becomes a teaching for humanity about the nature of dharma, the power of devotion, and the ultimate triumph of truth over falsehood. The warriors on both sides, whether vanara or rakshasa, play their cosmic roles in this grand drama of good versus evil.</p>
+                
+                <div class="verses-section">
+                    <h3>Sacred Verses from Battle ${i}</h3>
+                    
+                    <div class="verse">
+                        <div class="verse-number">Verse 6.${i}.1</div>
+                        <div class="verse-sanskrit">धर्मयुद्धे महाबाहो रामस्य रिपुसूदनः।<br>
+                        जयः सत्यस्य धर्मस्य रावणस्य पराजयः॥</div>
+                        <div class="verse-translation"><strong>Translation:</strong> In this righteous war, O mighty-armed destroyer of enemies, victory belongs to truth and dharma, and defeat to Ravana.</div>
+                        <div class="verse-meaning"><strong>Meaning:</strong> In any conflict between truth and falsehood, the ultimate victory always belongs to righteousness, regardless of temporary setbacks.</div>
+                    </div>
+                </div>
+                
+                <h3>The Eternal Teaching</h3>
+                <p>Through each moment of this epic war, Valmiki reveals the timeless truth that when divine consciousness (Rama) confronts the forces of ego and ignorance (Ravana), the outcome is never in doubt. The war serves as both historical event and spiritual allegory, showing us the path to victory in our own inner battles.</p>`
+            });
+        }
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function () {
+            generateBattles();
+            setupScrollProgress();
+            setupScrollToTop();
+        });
+
+        // Generate battle cards
+        function generateBattles() {
+            const grid = document.getElementById('battlesGrid');
+            grid.innerHTML = '';
+
+            battles.forEach((battle, index) => {
+                const card = document.createElement('div');
+                card.className = 'battle-card';
+                card.innerHTML = `
+                    <div class="battle-day">${battle.day}</div>
+                    <h3 class="battle-title">${battle.title}</h3>
+                    <p class="battle-summary">${battle.summary}</p>
+                    <div class="battle-meta">
+                        <span>${battle.warriors}</span>
+                        <span>${battle.outcome}</span>
+                    </div>
+                    <button class="read-btn" onclick="openBattle(${index})">Read Battle</button>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // Open battle content
+        function openBattle(battleIndex) {
+            const battle = battles[battleIndex];
+            if (!battle) return;
+
+            document.getElementById('contentTitle').innerHTML = `${battle.day}: ${battle.title}`;
+            document.getElementById('contentText').innerHTML = battle.content;
+            document.getElementById('battleContent').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Close battle content
+        function closeBattle() {
+            document.getElementById('battleContent').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Go back function
+        function goBack() {
+            if (document.getElementById('battleContent').style.display === 'flex') {
+                closeBattle();
+            } else {
+                window.history.back();
+            }
+        }
+
+        // Go next function
+        function goNext() {
+            if (document.getElementById('battleContent').style.display === 'flex') {
+                closeBattle();
+            } else {
+                // Navigate to next section or conclusion
+                window.location.href = '#conclusion';
+            }
+        }
+
+        // Go home function
+        function goHome() {
+            if (document.getElementById('battleContent').style.display === 'flex') {
+                closeBattle();
+            }
+            // Scroll to top of page (home position)
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Scroll to top
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Setup scroll progress bar
+        function setupScrollProgress() {
+            window.addEventListener('scroll', () => {
+                const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+                document.getElementById('progressBar').style.width = scrolled + '%';
+            });
+        }
+
+        // Setup scroll to top button
+        function setupScrollToTop() {
+            const scrollBtn = document.getElementById('scrollBtn');
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    scrollBtn.classList.add('visible');
+                } else {
+                    scrollBtn.classList.remove('visible');
+                }
+            });
+        }
+
+        // Close battle on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeBattle();
+            }
+        });
+
+        // Close battle on backdrop click
+        document.getElementById('battleContent').addEventListener('click', (e) => {
+            if (e.target.id === 'battleContent') {
+                closeBattle();
+            }
+        });
+    </script>
+    <script>(function () { function c() { var b = a.contentDocument || a.contentWindow.document; if (b) { var d = b.createElement('script'); d.innerHTML = "window.__CF$cv$params={r:'96ffbd3fb4dab277',t:'MTc1NTMzNDgwNC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);"; b.getElementsByTagName('head')[0].appendChild(d) } } if (document.body) { var a = document.createElement('iframe'); a.height = 1; a.width = 1; a.style.position = 'absolute'; a.style.top = 0; a.style.left = 0; a.style.border = 'none'; a.style.visibility = 'hidden'; document.body.appendChild(a); if ('loading' !== document.readyState) c(); else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c); else { var e = document.onreadystatechange || function () { }; document.onreadystatechange = function (b) { e(b); 'loading' !== document.readyState && (document.onreadystatechange = e, c()) } } } })();</script>
+</body>
+
+</html>
