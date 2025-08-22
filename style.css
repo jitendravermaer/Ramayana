@@ -110,7 +110,7 @@ body::before {
     margin-bottom: 40px;
     background: url(image/rama-avatar.jpg) center/cover no-repeat;
     background-blend-mode: overlay;
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(0, 0, 0, 0.3);
     color: rgba(255, 255, 255, 0.767);
     border-radius: 25px;
     padding: 80px;
